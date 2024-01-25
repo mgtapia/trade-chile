@@ -1,0 +1,165 @@
+@import 'frames';
+@import 'images';
+
+@mixin animate($x) {
+    @if $x == drive
+    {
+        -webkit-animation:drive 1.2s linear infinite;
+        -moz-animation:drive 1.2s linear infinite;
+        -ms-animation:drive 1.2s linear infinite;
+        -o-animation:drive 1.2s linear infinite;
+        animation:drive 1.2s linear infinite;
+    }
+    @else if $x == fade-in
+    {
+        -webkit-animation:fade-in .5s;
+        -moz-animation:fade-in .5s;
+        -ms-animation:fade-in .5s;
+        -o-animation:fade-in .5s;
+        animation:fade-in .5s;
+    }
+    @else if $x == move-in
+    {
+        -webkit-animation:move-in .5s;
+        -moz-animation:move-in .5s;
+        -ms-animation:move-in .5s;
+        -o-animation:move-in .5s;
+        animation:move-in .5s;
+    }
+    @else if $x == spinner-1
+    {
+        -webkit-animation: spinner-1 .6s infinite;
+        -moz-animation: spinner-1 .6s infinite;
+        -ms-animation: spinner-1 .6s infinite;
+        -o-animation: spinner-1 .6s infinite;
+        animation: spinner-1 .6s infinite;
+    }
+    @else if $x == spinner-2
+    {
+        -webkit-animation: spinner-2 .6s infinite;
+        -moz-animation: spinner-2 .6s infinite;
+        -ms-animation: spinner-2 .6s infinite;
+        -o-animation: spinner-2 .6s infinite;
+        animation: spinner-2 .6s infinite;
+    }
+    @else if $x == spinner-3
+    {
+        -webkit-animation: spinner-3 .6s infinite;
+        -moz-animation: spinner-3 .6s infinite;
+        -ms-animation: spinner-3 .6s infinite;
+        -o-animation: spinner-3 .6s infinite;
+        animation: spinner-3 .6s infinite;
+    }
+    @else if $x == recolor
+    {
+        -webkit-animation:recolor 1.2s linear infinite;
+        -moz-animation:recolor 1.2s linear infinite;
+        -ms-animation:recolor 1.2s linear infinite;
+        -o-animation:recolor 1.2s linear infinite;
+        animation:recolor 1.2s linear infinite;
+    }
+}
+
+@mixin align {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin clamp($x: 3) {
+    overflow: hidden;
+    white-space: pre-wrap;
+    display: -webkit-box;
+    -webkit-line-clamp: $x;
+    -webkit-box-orient: vertical; 
+}
+
+@mixin grayscale($x: 1) {
+    -webkit-filter: grayscale($x);
+    -moz-filter: grayscale($x);
+    -ms-filter: grayscale($x);
+    -o-filter: grayscale($x);
+    filter: grayscale($x);
+}
+
+@mixin hide {
+    display: none !important;
+}
+
+@mixin modal {
+    background: rgba(black,.6);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+@mixin nowrap {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin screen {
+	min-height: 100vh;
+	width: 100%;
+}
+
+@mixin shadow($x: 0) {
+    @if $x == 0 {
+        -webkit-box-shadow: 0 1px 3px rgba(black, .3);
+        -moz-box-shadow: 0 1px 3px rgba(black, .3);
+        -ms-box-shadow: 0 1px 3px rgba(black, .3);
+        -o-box-shadow: 0 1px 3px rgba(black, .3);
+        box-shadow: 0 1px 3px rgba(black, .3);
+    } 
+    @if $x == 1 {
+        -webkit-box-shadow: 0 2px 5px #777;
+        -moz-box-shadow: 0 2px 5px #777;
+        -ms-box-shadow: 0 2px 5px #777;
+        -o-box-shadow: 0 2px 5px #777;
+        box-shadow: 0 2px 5px #777;
+    } 
+}
+
+@mixin show {
+    display: flex !important;
+}
+
+.no-xl, .only-lg, .only-md, .only-sm, .only-xs, .max-lg, .max-md, .max-sm, .max-xs { @include hide; }
+
+@media only screen and (max-width: $wide-desktop) { 
+    .only-lg, .no-xl, .no-md, .no-sm, .no-xs, .max-lg { @include show; }    
+    .no-lg, .only-xl, .only-md, .only-sm, .only-xs, .max-md, .max-sm, .max-xs, .min-xl { @include hide; }
+}
+@media only screen and (max-width: $desktop) {  
+    .only-md, .no-xl, .no-lg, .no-sm, .no-xs, .max-md, .max-lg { @include show; }
+    .no-md, .only-xl, .only-lg, .only-sm, .only-xs, .max-sm, .max-xs, .min-lg { @include hide; }
+}
+@media only screen and (max-width: $tablet) {   
+    .only-sm, .no-xl, .no-lg, .no-md, .no-xs, .max-sm, .max-md, .max-lg { @include show; }
+    .no-sm, .only-xl, .only-lg, .only-md, .only-xs, .max-xs, .min-md { @include hide; }
+}
+@media only screen and (max-width: $phone) {    
+    .only-xs, .no-xl, .no-lg, .no-md, .no-sm, .max-xs, .max-sm, .max-md, .max-lg { @include show; }
+    .no-xs, .only-xl, .only-lg, .only-mg, .only-sm, .min-sm, .min-md { @include hide; }
+}
+
+@mixin tucar {
+    &.lead b, b
+    {
+        color: #444;
+        font-weight: bold;
+        s
+        {
+            color: $primary;
+        }
+    }
+}

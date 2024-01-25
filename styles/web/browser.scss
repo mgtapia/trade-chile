@@ -1,0 +1,227 @@
+div.browser
+{
+	background: white;
+	max-width: $browser;
+	margin: 0 auto;
+	padding: 0;
+	iframe
+	{
+		@include shadow;
+		border: 1px solid #ddd;
+		width: calc(100% - 50px);
+		margin: 0 25px;
+	}
+	div.container-fluid
+	{
+		max-width: $container;
+		@media only screen and (max-width: $container)
+		{
+			max-width: $wide-desktop;
+		}
+		@media only screen and (max-width: $phone) 
+		{
+			iframe
+			{
+				margin: -100px 0 0;
+				box-shadow: none;
+				width: 100%;
+			}
+		}
+	}
+}
+
+main.loading
+{
+	@include screen;
+	@include center;
+	background: $secondary;
+	overflow: hidden;
+	img, amp-img
+	{
+		height: 100px;
+		margin: 0 auto;
+		filter: brightness(100);
+		-webkit-filter: brightness(100);
+		//@include animate(drive);
+	}
+	a
+	{
+		text-decoration: underline;
+	}
+}
+
+div.browser
+{
+	div.options
+	{
+		margin-bottom: 0px;
+		div.active
+		{					
+			h6
+			{
+				color: $primary;
+				font-weight: bold;
+			}
+		}
+		div:not(.active)
+		{
+			@include grayscale;
+			cursor: pointer;
+			opacity: .6;
+		}
+		@media only screen and (max-width: $desktop)
+		{
+			margin-bottom: 0;
+		}
+		@media only screen and (max-width: $phone)
+		{
+			justify-content: center;
+		}
+	}
+	div.answers
+	{
+		border: 1px solid #efefef;
+		padding: 50px;
+		ul, ol
+		{
+			display: flex;
+			flex-direction: column;
+			list-style: initial;
+			padding: 15px 25px;
+			li:not(:last-child)
+			{
+				margin-bottom: 5px;
+			}
+		}
+		ol
+		{
+			list-style-type: decimal;
+		}
+		h4
+		{
+			font-size: 30px;
+		}
+		h5
+		{
+			margin-top: 30px;
+		}
+		big
+		{
+			cursor: pointer;
+			&:hover
+			{
+				color: $primary;					
+			}
+		}
+		p + p
+		{
+			margin-top: 15px;
+		}		
+		div
+		{
+			margin: 0;
+		}		
+		@media only screen and (max-width: $tablet) 
+		{
+			padding: 25px;
+			h4
+			{
+				font-size: 24px;
+			}
+		}				
+		@media only screen and (max-width: $phone) 
+		{
+			border: none;
+			margin-top: 50px !important;
+			padding: 0px;
+		}
+	}
+	div.goback
+	{
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+		button
+		{
+			border-radius: 0;
+		}
+	}
+	div.plan
+	{
+		border: 1px solid #fafafa;
+		padding: 5px 5px 20px;
+		&.active
+		{
+			border-color: $primary;
+			background: rgb($primary, .04);
+		}
+		&:not(.active)
+		{
+			cursor: pointer;
+		}
+	}
+	div.slider
+	{
+		display: block;
+		padding: 0;
+		div.slide
+		{
+			display: none;
+			margin: 0;
+			min-height: 360px;
+			width: 100%;
+			picture.figure 
+			{
+				img, amp-img
+				{
+					height: auto;
+					max-height: 360px;
+					max-width: 100%;
+					width: 100%;
+				}
+			}
+			&.active
+			{
+				display: flex;
+			}
+		}
+		@media only screen and (max-width: $phone)
+		{
+			padding: 0px;
+			div.slide picture.figure 
+			{
+				img, amp-img
+				{
+					max-height: 200px;
+				}
+			}
+		}
+	}
+	div.control
+	{
+		margin-top: 15px;
+		ul
+		{
+			align-items: center;
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			width: 100%;
+			li
+			{
+				margin: 0 7.5px;
+				&.active
+				{
+					color: $primary;
+					font-size: 18px;
+				}
+				&:not(.active)
+				{
+					color: #777;
+					cursor: pointer;
+					font-size: 10px;
+				}
+			}
+		}
+	}
+}

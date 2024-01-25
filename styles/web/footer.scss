@@ -1,0 +1,244 @@
+footer.web
+{
+	&.dark > picture 
+	{
+		img, amp-img
+		{
+			background: $primary;
+		}
+	}
+	& > picture
+	{		
+		img, amp-img
+		{
+			margin-top: -1px;
+			width: 100%;
+		}
+	}
+	nav
+	{
+		background: #3d95de;
+		color: white;
+		font-size: 13px;
+		height: 60px;
+		text-align: center;
+		width: 100%;
+		img, amp-img
+		{
+			height: 25px;
+			margin: 25px 0 30px;
+			@media only screen and (max-width: $phone)
+			{
+				margin: 15px;
+			}
+		}
+		div.container-fluid
+		{
+			align-items: center;
+			background: transparent;
+			border: none;
+			display: flex;
+			justify-content: space-between;
+			padding: 0 50px;
+			a.lang
+			{
+				margin-left: 10px;
+				&.fr
+				{
+					margin-right: 10px;
+				}
+				&.active
+				{
+					text-decoration: underline;
+					font-weight: bold;
+				}
+			}
+			&:first-child
+			{
+				border-bottom: 1px solid #eee;
+				height: 60px;
+				ul
+				{
+					li
+					{
+						&.social
+						{
+							font-weight: bold;
+							margin-top: 25px;
+							text-transform: uppercase;
+						}
+						a
+						{
+							color: inherit;
+							margin-right: 25px;
+							i
+							{
+								font-size: 20px;
+							}
+							&:hover
+							{
+								color: $primary;
+							}
+						}
+					}
+				}				
+				form
+				{
+					display: flex;
+					margin-left: 0;
+					margin-bottom: 0;
+					max-width: $phone;
+					width: 300px;
+					button
+					{
+						background: white;
+						border: 1px solid #eaeaea;
+						border-radius: 0;
+						color: black;
+						height: 48px;
+						margin: 0;
+						padding: 0;
+						width: auto;
+						i
+						{
+							font-size: 20px;
+						}
+						&:first-child
+						{
+							border-right: none;
+							padding-left: 30px;
+						}
+						&:last-child
+						{
+							border-left: none;
+							padding-right: 20px;
+							padding-left: 0px;
+						}
+					}
+					input
+					{
+						border: 1px solid #eaeaea;
+						border-left: none;
+						font-size: 14px;
+						height: 48px;
+						margin: 0;
+						outline: none;
+						padding: 0 10px;
+						padding-top: 5px;
+						width: 100%;
+						&:not(:last-child)
+						{
+							border-right: none;
+						}
+					}
+					&.query
+					{
+						@include shadow;
+					}
+				}
+			}
+			&:not(:first-child)
+			{
+				border-bottom: 1px solid #eee;
+				ul
+				{
+					display: flex;
+					justify-content: space-between;
+					padding: 30px 0;
+					width: calc(100% - 250px);
+					ol
+					{
+						display: flex;
+						flex-direction: column;						
+						& > li:first-child, 
+						button
+						{
+							text-transform: uppercase;
+						}
+						li 
+						{
+							&:not(:first-child)
+							{
+								cursor: pointer;
+								&:hover
+								{
+									color: $primary;
+								}
+							}
+							&:not(:last-child)
+							{
+								margin-bottom: 15px;
+							}
+							i
+							{
+								display: none;
+							}
+						}
+					}
+					li
+					{
+						color: inherit;
+						cursor: default;
+						font-weight: normal;
+						margin: 0;
+						padding: 0;
+						text-align: left;
+						width: 100%;
+						&:first-child
+						{
+							font-weight: bold;
+						}
+					}
+				}
+			}
+			&:last-child
+			{
+				border: none;
+				height: 60px;
+				ol
+				{
+					display: flex;
+					justify-content: space-between;
+					width: 100%;
+					li
+					{
+						i
+						{
+							font-size: 16px;
+							margin-right: 5px;
+						}
+						a
+						{
+							color: white;
+						}
+					}
+				}
+			}
+			@media only screen and (max-width: $tablet) 
+			{
+				padding: 0 25px;
+			}
+			@media only screen and (max-width: $phone) 
+			{
+				padding: 0 15px;
+				&:last-child
+				{
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					height: 90px;
+					ol.border-top
+					{
+						border-color: lighten(#3d95de, 12.5%) !important;
+						padding-top: 10px;
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+		@media only screen and (max-width: $phone) 
+		{
+			height: 90px;
+		}
+	}
+}

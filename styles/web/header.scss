@@ -1,0 +1,576 @@
+header.web
+{
+	$height: 60px;
+	nav
+	{
+		@include shadow(1);
+		background: #3d95de;
+		color: white;
+		font-size: 13px;
+		height: $height;
+		max-width: $browser;
+		position: fixed;
+		width: 100%;
+		z-index: 10;
+		& > div.container-fluid
+		{
+			align-items: center;
+			display: flex;
+			justify-content: space-between;
+			text-transform: uppercase;
+			height: inherit;
+			padding: 0 50px;
+			ul
+			{
+				align-items: center;
+				display: flex;
+				padding: 0;
+				&:first-child
+				{
+					li
+					{
+						align-items: center;	
+						color: inherit;
+						display: flex;
+						margin-right: 50px;
+						a
+						{
+							color: inherit;
+							i
+							{
+								font-size: 12px;
+								margin-left: 10px;
+								visibility: hidden;
+							}
+						}
+						&.active, &:hover
+						{
+							a
+							{
+								color: inherit;
+								i
+								{
+									visibility: visible;
+								}
+							}
+						}
+						&.active
+						{
+							a
+							{
+								cursor: default;
+								font-weight: bold;
+							}
+						}
+						&.link
+						{
+							cursor: pointer;
+						}	
+						&.social
+						{
+							font-weight: bold;
+							text-transform: uppercase;
+							margin-top: 25px;
+						}
+					}
+					img, amp-img
+					{
+						max-height: 35px;
+						filter: brightness(100);
+						-webkit-filter: brightness(100);
+					}
+				}
+				&:last-child
+				{
+					a
+					{
+						color: inherit;
+						&:hover
+						{
+							color: $primary;
+						}
+					}
+					li
+					{
+						cursor: pointer;
+						margin-left: 50px;
+						i
+						{
+							color: inherit;
+							font-size: 25px;
+							margin-left: -25px;
+							padding-left: 25px;
+							visibility: visible;
+						}
+						span:last-child
+						{
+							display: none;
+						}
+					}
+					button
+					{
+						font-weight: normal;
+						height: 40px;
+						margin-bottom: -10px;
+						text-transform: uppercase;
+						width: 180px;
+					}
+					.menu
+					{
+						display: none;
+					}
+					.flag
+					{
+						i
+						{
+							font-size: 15px;
+						}
+						a.lang
+						{
+							color: white;
+							margin-left: 10px;
+							&.fr
+							{
+								margin-right: 10px;
+							}
+							&.active
+							{
+								text-decoration: underline;
+								font-weight: bold;
+							}
+						}
+					}
+				}
+				@media only screen and (max-width: $container) 
+				{
+					&:last-child
+					{
+						button
+						{
+							height: 36px;
+							font-weight: bold;
+							width: 140px;
+						}
+					}
+				}
+				@media only screen and (max-width: $wide-desktop) 
+				{
+					&:first-child
+					{
+						li
+						{
+							margin-right: 30px;
+						}
+					}
+					&:last-child
+					{
+						li
+						{
+							margin-left: 30px;
+						}
+					}
+				}
+				@media only screen and (max-width: $desktop) 
+				{
+					&:first-child li:not(.link)
+					{
+						display: none;
+					}
+					&:last-child
+					{
+						li
+						{
+							margin-left: 50px;		
+							span:first-child
+							{
+								display: none;
+							}					
+							span:last-child
+							{
+								display: inline-block;
+							}
+						}
+						.auth
+						{
+							display: none;
+						}
+						.menu
+						{
+							display: flex;
+						}
+					}
+				}
+			}
+			@media only screen and (max-width: $tablet) 
+			{
+				padding: 0 25px;
+				ul
+				{
+					&:first-child
+					{
+						li, li.d-none
+						{
+							display: flex !important;
+						}
+					}
+					&:last-child 
+					{
+						li:not(.menu)
+						{
+							display: none;
+						}
+						li
+						{
+							margin: 0;
+							margin-left: 15px;
+							a, i
+							{
+								color: white;
+								font-size: 21px;
+							}
+						}
+						li.flag
+						{
+							display: flex;
+							a
+							{
+								display: none;
+								margin: 0;
+							}
+							i
+							{
+								font-size: 19px;
+							}
+						}
+					}
+				}
+			}
+			@media only screen and (max-width: $phone) 
+			{
+				padding: 0 15px;
+				ul
+				{
+					&:first-child
+					{
+						img
+						{
+							height: 25px;
+						}
+					}
+				}
+			}
+		}
+		div.dropdown
+		{
+			height: 400px;
+			position: absolute;
+			text-transform: none;
+			top: $height;
+			div.container-fluid
+			{
+				background: white;
+				border: 1px solid #eee;
+				border-top: none;
+				color: black;
+				display: flex;
+				justify-content: flex-start;
+				padding: 0;		
+				text-transform: none;
+			}
+			&.wide
+			{
+				left: 0px;
+				height: 100vh;
+				width: 100%;
+				ul
+				{
+					align-items: flex-start;
+					flex-direction: column;
+					padding: 25px;
+					& > li:first-child, button
+					{
+						text-transform: uppercase;
+					}
+					li
+					{
+						color: inherit;
+						cursor: default;
+						font-weight: normal;
+						margin: 0;
+						padding: 0;
+						text-align: left;
+						width: 100%;
+						&:first-child
+						{
+							font-weight: bold;
+						}
+					}
+					ol
+					{
+						border-left: 0px solid black;
+						display: flex;
+						flex-direction: column;
+						margin: 20px 0 5px;
+						transition: all .3s linear;
+						width: 100%;
+						li
+						{
+							padding-right: 27px;
+							transition: all .3s linear;
+							&:first-child
+							{
+								margin-bottom: 5px;
+							}
+						}
+						&:hover
+						{
+							padding-left: 25px;
+							border-width: 2px;
+							li
+							{
+								padding-right: 0;
+							}
+						}
+					}
+					&:first-child
+					{
+						background: #f6f6f6;
+						border-right: 1px solid #eee;
+						padding: 25px;
+						width: 35%;
+					}
+					&:not(:first-child)
+					{
+						width: 20%;
+						li
+						{
+							margin-bottom: 20px;
+							a
+							{
+								color: inherit;
+								cursor: pointer;
+								font-weight: normal;
+								margin-right: 20px;
+								i
+								{
+									font-size: 20px;
+								}
+								&:hover
+								{
+									color: $primary;
+								}
+							}
+							button
+							{
+								font-weight: normal;
+								height: 44px;
+								width: 200px;
+							}
+						}
+					}
+					&:last-child
+					{
+						width: 25%;
+					}
+				}
+				@media only screen and (max-width: $wide-desktop)
+				{
+					ul
+					{
+						&:not(:first-child)
+						{
+							li button
+							{
+								height: 40px;
+								width: 150px;
+							}
+						}
+					}
+				}
+			}
+			&:not(.wide)
+			{
+				border-top: none;
+				height: 100vh;
+				margin-left: -100vw;
+				padding: 0 100vw;
+				div.container-fluid
+				{
+					justify-content: space-between;
+					padding: 25px;
+					width: 250px;
+					ul
+					{
+						display: flex;
+						flex-direction: column;
+						justify-content: flex-start;
+						width: 45%;
+						&:first-child
+						{
+							//width: 55%;
+							width: 100%;
+						}
+						li
+						{
+							color: black;
+							cursor: default;
+							font-weight: normal;
+							padding: 0;
+							text-align: left;
+							width: 100%;
+							&:first-child
+							{
+								font-weight: bold;
+								text-transform: uppercase;
+							}
+							&:not(:first-child)
+							{
+								margin-top: 25px;									
+								&:hover
+								{
+									cursor: pointer;
+									color: $primary;
+								}
+							}
+							a
+							{								
+								font-weight: normal;
+								cursor: pointer;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.menu
+		{
+			background: $primary;
+			& > div.container-fluid
+			{
+				& > ul
+				{
+					a:hover
+					{
+						color: inherit;
+					}
+					li
+					{
+						color: white;
+					}
+					img, amp-img
+					{
+						filter: brightness(100);
+					}
+				}
+				div.dropdown > div.container-fluid
+				{
+					display: flex;
+					flex-direction: column;
+					padding: 0;
+					ol
+					{
+						background: #e8f0fe;
+						display: flex;
+						flex-direction: column;
+						li
+						{
+							color: black;
+							margin: 0;
+							&:first-child
+							{
+								align-items: center;
+								background: white;
+								border-bottom: 1px solid #d2e3fc;
+								cursor: pointer;
+								display: flex;
+								justify-content: space-between;
+								padding: 20px 32px 20px 25px;
+								i
+								{
+									border: none;
+									color: $active;
+									font-size: 12px;
+								}
+								&:hover
+								{
+									background: #efefef;
+								}
+							}
+							&:not(:first-child)
+							{
+								display: none;
+								font-size: 13px;
+								padding: 10px 25px;
+							}
+							@media only screen and (max-width: $phone) 
+							{
+								padding-left: 15px !important;
+								padding-right: 22px !important;
+							}
+						}						
+						&.active
+						{
+							border-bottom: 1px solid #d2e3fc;
+							padding-bottom: 10px;
+							li
+							{
+								&:first-child
+								{
+									background: white;
+									cursor: default;
+									margin-bottom: 12px;
+								}
+								&:not(:first-child)
+								{
+									display: flex;
+									cursor: pointer;
+									&:hover
+									{
+										background: #d2e3fc;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			@media only screen and (max-width: $phone) 
+			{
+				& > div
+				{
+					height: inherit;
+					ul
+					{
+						&:first-child
+						{
+							img, amp-img
+							{
+								margin: auto 0;
+							}
+						}
+					}
+					div.dropdown
+					{
+						background: white;
+						border: none !important;
+						height: 100vh;
+						top: 60px;
+						div.container
+						{
+							border: none !important;
+						}
+					}
+				}
+			}
+		}
+		@media only screen and (max-width: $phone)
+		{
+			$height: 50px;
+			height: $height;
+			& > div.container-fluid
+			{
+				padding: 0 15px;
+			}
+		}
+	}
+}

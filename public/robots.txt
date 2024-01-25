@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /c/
+Disallow: /u/
+
+Sitemap: https://truckit.tech/sitemap.xml

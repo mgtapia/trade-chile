@@ -1,0 +1,129 @@
+button, input[type="button"]
+{
+    background-color: $primary;
+    border-radius: 2px;
+    background-position: center;
+    border: none;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    height: 36px;
+    letter-spacing: .5px;
+    padding: 0px 16px;
+    transition: background .8s;
+    &:not(:last-child)
+    {
+        margin-right: 15px;
+    }
+    &:hover
+    {
+        background: darken($primary, 5%) radial-gradient(circle, transparent 1%, darken($primary, 5%) 1%) center/15000%;
+    }
+    &:active
+    {
+        background-color: darken($primary, 10%);
+        background-size: 100%;
+        transition: background 0s;
+    }
+    &.primary
+    {
+        background-color: $active;
+        &:hover
+        {
+            background: darken($active, 5%) radial-gradient(circle, transparent 1%, darken($active, 5%) 1%) center/15000%;
+        }
+        &:active
+        {
+            background-color: darken($active, 15%);
+            background-size: 100%;
+            transition: background 0s;
+        }
+    }
+    &.invert
+    {
+        background: white;
+        border: 1px solid #ccc;
+        color: $primary;
+        &.animate:not(:hover)
+        {
+            @include animate(color);
+        }
+        &:hover
+        {
+            border-color: lighten($primary, 3%);
+            background: rgba(71, 108, 155, .1) radial-gradient(circle, transparent 1%, rgba(71, 108, 155, .1) 1%) center/15000%;
+        }
+        &:active
+        {
+            background-color: rgba(71, 108, 155, .2);
+            background-size: 100%;
+            transition: background 0s;
+        }
+    }
+    &.cancel, &[type="button"]
+    {
+        background: white;
+        color: inherit;
+        cursor: pointer;
+        &:hover
+        {
+            background: #eee radial-gradient(circle, transparent 1%, #eee 1%) center/15000%;
+        }
+        &:active
+        {
+            background: #ddd;
+            background-size: 100%;
+            transition: background 0s;
+        }
+    }
+    &.status
+    {
+        background: transparent;
+        color: #666;
+        cursor: default;
+        &:hover
+        {
+            background: inherit;
+        }
+    }
+    &.table
+    {
+        background: transparent !important;
+        color: $active;
+        height: 30px;
+        margin: 0;
+        margin-left: 5px;
+        padding: 0px 30px;
+        transition: background .3s;
+        &:hover
+        {
+            background: rgba($active, .1) !important;
+        }
+    }
+    &:disabled
+    {
+        background: #ddd;
+        color: #aaa;
+        cursor: default;
+        &:hover, &:focus
+        {
+            background: #ddd;
+            border-color: #ccc;
+            color: #aaa;
+        }
+        &.disabled
+        {
+            background: inherit;
+            color: #777;
+        }
+    }
+    i
+    {
+        margin-right: 3px;
+        vertical-align: middle;
+        &.link
+        {
+            font-size: 16px;
+        }
+    }
+}

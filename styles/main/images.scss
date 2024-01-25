@@ -1,0 +1,46 @@
+img
+{
+	@mixin image($url) {
+		content: url('#{$images}/tools/#{$url}.png');
+	}
+	&#th-drivers
+	{
+		@include image(hosting);
+	}
+	&#th-owners
+	{
+		@include image(predictions);
+	}
+	&#th-cars
+	{
+		@include image(auth);
+	}
+	&#th-assignments
+	{
+		@include image(config);
+	}
+	&#th-documents
+	{
+		@include image(storage);
+	}
+	&#th-interviews
+	{
+		@include image(discovery);
+	}
+	&#th-reports
+	{
+		@include image(appdistro);
+	}
+	&#th-balance
+	{
+		@include image(analytics);
+	}
+	&#th-transactions
+	{
+		@include image(cloudmessaging);
+	}
+	&#th-advance
+	{
+		@include image(dynamiclinks);
+	}
+}

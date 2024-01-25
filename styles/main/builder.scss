@@ -1,0 +1,85 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	/*user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;*/
+}
+a, a:hover, a:focus
+{
+    cursor: pointer;
+    text-decoration: none;
+}
+body
+{
+    font-family: 'Metropolis';
+	overflow-x: hidden;
+    overflow-y: auto;
+}
+button
+{
+	border: none;
+	cursor: pointer;
+    &:focus
+    {
+        outline: none;
+    }
+}
+i
+{
+    font-size: inherit;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 1;
+    text-transform: none;
+    vertical-align: middle;
+    word-wrap: normal;
+    white-space: nowrap;
+    &.material-icons, &.ui-io
+    {
+        direction: ltr;
+        display: inline-block;
+        font-family: 'Material Icons';
+        font-weight: normal;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+    }
+}
+img 
+{
+    pointer-events: none;
+    max-width: 100%;
+}
+s
+{
+    text-decoration: none;
+}
+ol, ul
+{
+	display: flex;
+	list-style: none;
+	margin: 0;
+}
+/*::-webkit-scrollbar 
+{ 
+    width: 14px; 
+}
+::-webkit-scrollbar-track 
+{ 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    background: #ddd;
+}
+::-webkit-scrollbar-thumb 
+{ 
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    background: #ccc; 
+    border: 1px solid transparent;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive 
+{
+    background: rgba(160,160,160,0.4); 
+}*/
