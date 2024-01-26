@@ -47,7 +47,7 @@ function Page() {
             </h4>
           )}
         </div>
-        <div className="flex mt-5 text-center">
+        <div className="flex mt-20 text-center">
           <div className="w-33">
             <img alt="ESTUDIOS DE MERCADO" src="/images/logos/a.png" />
             {ES ? (
